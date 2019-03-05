@@ -1,0 +1,13 @@
+Few Important String Functions
+1.Strlen(string)-used to get the length of the string
+2.Str_word_count(string)-Counting of the number of words in a String
+3.Strev(string)-Used to reverse a string
+4.Strpos(string,text)-Finding Text Within a String
+5.Str_replace(string to be replace,text,string)-Replacing text within a string
+6.Ucwords(string)-Converting lowercase into Title Case
+7.Strtoupper(string)-Converting a whole string into UPPERCASE
+8.Strtolower(string)-Converting a whole string into lowercase
+9.Str_repeat(string,repeat)-Reaeating a string
+10.Strcmp(str1,str2)-Comparing Strings
+11.substr(string,start,length)-Displaying part of String
+12.trim(string,charlist)-Removing white spaces from a String
