@@ -13,3 +13,9 @@ db.get('users')
 db.get('users')
 .push({ 'roomno' : '2', 'password' : '1ds171'})
 .write()
+
+// const adapter = new FileSync('complaint_details.json')
+// db.get('complaint_detail_students')
+//   .push({'roomno':'',
+//          'detail':'',
+//          'imgurl':'',  })

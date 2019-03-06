@@ -7,8 +7,7 @@ const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync')
 var bodyparser = require('body-parser')
 var multer = require('multer')
-var upload =multer({ dest: 'uploads/'})
-
+var upload =multer({ dest: path.join(__dirname, '../myapp/uploads')})
 const adapter = new FileSync('database.json')
 const db = low(adapter)
 
@@ -37,10 +36,27 @@ else
 });
 
 app.post('/cp_data',upload.any(),(req,res)=>{
-		var name = req.body.originalname;
-		console.log(name);
+	
 		res.send(req.files);
-});
+		var name = req.files;
+		// console.log(name[0].originalname);
+		var filenames = name[0].filename; //accessing first member of json array
+		console.log(filenames);
+// 		var complaint_portal_detail = {'roomno':req.body.roomno,
+// 		'detail': req.body.comment,
+// 		'imgurl':filename,  }
+// });
+
+
+// app.post('/cp_data', upload.single('filename'), function(req, res) {
+//   if (req.file) {
+//     console.dir(req.file);accepts file whose starting is 'foo'
+//     return res.end('Thank you for the file');
+//   }
+//   res.end('Missing file');
+// });
+
+
 app.get('/cp', (req, res) => {
   res.sendFile(path.join(__dirname, '/cp.html'));
 });
@@ -49,9 +65,10 @@ app.get('/cp1', (req, res) => {
   res.sendFile(path.join(__dirname, '/cp1.html'));
 });
 
+
+
 app.listen(8000, () => {
   console.log('Example app listening on port 8000!')
 });
 
 //console.log(db.get('users').find({'roomno' : '1'}).value())
-
