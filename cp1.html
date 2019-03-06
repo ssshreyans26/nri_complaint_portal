@@ -7,19 +7,13 @@
 </head>
 <body>
 
-<div class="input-group1 input-group-sm mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-sm">ROOM NO.</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-</div>
-<div class="input-group2 input-group-sm mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-sm">Comment</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-</div>
+
 <form action="/cp_data" method="POST" enctype="multipart/form-data">
+      <span class="input-group-text" id="inputGroup-sizing-sm">ROOM NO.</span>
+    <input type="text" name="roomno" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Comment</span>
+    <input type="text" name="comment" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+ 
   <input type="file" name="file" accept="image/*" >
   <input type="submit" name="submit" value="submit">
 </form>

@@ -42,10 +42,14 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 		// console.log(name[0].originalname);
 		var filenames = name[0].filename; //accessing first member of json array
 		console.log(filenames);
-// 		var complaint_portal_detail = {'roomno':req.body.roomno,
-// 		'detail': req.body.comment,
-// 		'imgurl':filename,  }
-// });
+		var detail = req.body.comment;
+		var roomno = req.body.roomno;
+
+		db.get('complaint_detail_students').push({'roomno':roomno,
+		'detail': detail,
+		'imgurl':filenames, }).write();
+			// assert.equal(null,err);
+		});
 
 
 // app.post('/cp_data', upload.single('filename'), function(req, res) {
@@ -55,7 +59,9 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 //   }
 //   res.end('Missing file');
 // });
-
+app.get('/admin',(req,res)=>{
+			
+});
 
 app.get('/cp', (req, res) => {
   res.sendFile(path.join(__dirname, '/cp.html'));

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "alert-node": "^1.2.2",
+    "assert": "^1.4.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "lowdb": "^1.0.0",
