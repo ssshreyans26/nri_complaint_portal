@@ -10,6 +10,9 @@ var multer = require('multer')
 var upload =multer({ dest: path.join(__dirname, '../myapp/uploads')})
 const adapter = new FileSync('database.json')
 const db = low(adapter)
+app.set('views' , path.join(__dirname, 'views'))
+app.set('view engine', 'pug');
+
 
 
 app.use(bodyparser.json())//to use a function inside the node app
@@ -37,7 +40,7 @@ else
 
 app.post('/cp_data',upload.any(),(req,res)=>{
 	
-		res.send(req.files);
+	
 		var name = req.files;
 		// console.log(name[0].originalname);
 		var filenames = name[0].filename; //accessing first member of json array
@@ -48,6 +51,7 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 		db.get('complaint_detail_students').push({'roomno':roomno,
 		'detail': detail,
 		'imgurl':filenames, }).write();
+			return res.redirect('/cp2');
 			// assert.equal(null,err);
 		});
 
@@ -59,17 +63,29 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 //   }
 //   res.end('Missing file');
 // });
-app.get('/admin',(req,res)=>{
+
+
+// app.get('/cp2',(req,res)=>{
+// 	var a = (db.get('complaint_detail_students').value());
+// 	res.send(a);
+	 
 			
-});
+// });
 
 app.get('/cp', (req, res) => {
   res.sendFile(path.join(__dirname, '/cp.html'));
 });
+app.get('/cp2', (req, res) => {
+	res.render('cp2')
+  });
 
 app.get('/cp1', (req, res) => {
   res.sendFile(path.join(__dirname, '/cp1.html'));
 });
+
+
+	
+ 
 
 
 
