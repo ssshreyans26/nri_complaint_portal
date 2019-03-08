@@ -42,9 +42,10 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 	
 	
 		var name = req.files;
-		// console.log(name[0].originalname);
+		var originalname = 	name[0].originalname;
+		var ext = originalname.split('.').pop()
 		var filenames = name[0].filename; //accessing first member of json array
-		console.log(filenames);
+		filenames=filenames+'.'+ext;
 		var detail = req.body.comment;
 		var roomno = req.body.roomno;
 
@@ -76,7 +77,10 @@ app.get('/cp', (req, res) => {
   res.sendFile(path.join(__dirname, '/cp.html'));
 });
 app.get('/cp2', (req, res) => {
-	res.render('cp2')
+	var a = (db.get('complaint_detail_students').value());
+	// console.log('a', a);
+	res.render('cp2.pug',{a:a,title:'success'})
+	return a;
   });
 
 app.get('/cp1', (req, res) => {
