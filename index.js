@@ -10,9 +10,12 @@ var multer = require('multer')
 var upload =multer({ dest: path.join(__dirname, '../myapp/uploads')})
 const adapter = new FileSync('database.json')
 const db = low(adapter)
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
 app.set('views' , path.join(__dirname, 'views'))
 app.set('view engine', 'pug');
-
+var session = require('express-session');
+app.use(session({secret: "Shh, its a secret!"}));
 
 
 app.use(bodyparser.json())//to use a function inside the node app
@@ -26,7 +29,9 @@ app.get('/', (req, res) => {
 
 app.post('/login_check', (req, res) => {
  if 	(db.get('users').find({'roomno' : req.body.roomno}).value().password == req.body.password){
- 	//console.log("user logged in")
+	//  console.log("user logged in" + users.roomno)
+	 req.session.user = req.body.roomno;
+	 console.log(req.session.user);
  	return res.redirect('/cp1');
  } 	 
 else
@@ -38,9 +43,9 @@ else
  //res.redirect('cp1')
 });
 
+
 app.post('/cp_data',upload.any(),(req,res)=>{
-	
-	
+	console.log(req.session.user);
 		var name = req.files;
 		var originalname = 	name[0].originalname;
 		var ext = originalname.split('.').pop()
@@ -53,6 +58,7 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 		'detail': detail,
 		'imgurl':filenames, }).write();
 			return res.redirect('/cp2');
+			
 			// assert.equal(null,err);
 		});
 
