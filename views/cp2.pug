@@ -8,8 +8,10 @@ body
             - var roomno="Room no"+item.roomno
             - var details="Details"+item.detail
             - var imageurl="imageurl"+item.imgurl
-            - var lol = item.imgurl
+            - var lol2 = item.imgurl
+            - var lol3 = "uploads/"+item.imgurl
+            - var lol = {"src" : lol3}
             li=roomno+"\n"+details+"\n"+imageurl
             li
                 img.className#IdName(src="uploads/1552307597978.png" )
-                img(src="#{uploads/lol}")
+                img&attributes(lol)

@@ -16,9 +16,9 @@ var storage = multer.diskStorage({
 	filename: function (req, file, cb) {
 	  cb(null, Date.now() + path.extname(file.originalname)) //Appending extension
 	}
-  })
-  
+  }) 
 var upload = multer({ storage: storage });
+
 const adapter = new FileSync('database.json')
 const db = low(adapter)
 var cookieParser = require('cookie-parser');
