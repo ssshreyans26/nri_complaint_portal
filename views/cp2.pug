@@ -3,10 +3,12 @@ head
     title=title
 body   
     h1 Your Problem is Registered Successfully Registered 
-    h2 Variable: #{a}
     ul
         each item in a
             - var roomno="Room no"+item.roomno
             - var details="Details"+item.detail
             - var imageurl="imageurl"+item.imgurl
             li=roomno+"\n"+details+"\n"+imageurl
+            li
+                img.className#IdName(src="uploads/0a72b8d206b888c57c29806c21c4d549.png" )
+                img(src="./uploads/#{imageurl}")

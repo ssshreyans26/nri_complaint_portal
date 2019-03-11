@@ -7,7 +7,18 @@ const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync')
 var bodyparser = require('body-parser')
 var multer = require('multer')
-var upload =multer({ dest: path.join(__dirname, '../myapp/uploads')})
+
+
+var storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+	  cb(null, 'uploads')
+	},
+	filename: function (req, file, cb) {
+	  cb(null, Date.now() + path.extname(file.originalname)) //Appending extension
+	}
+  })
+  
+  var upload = multer({ storage: storage });
 const adapter = new FileSync('database.json')
 const db = low(adapter)
 var cookieParser = require('cookie-parser');
@@ -16,6 +27,8 @@ app.set('views' , path.join(__dirname, 'views'))
 app.set('view engine', 'pug');
 var session = require('express-session');
 app.use(session({secret: "Shh, its a secret!"}));
+app.use("/uploads", express.static(path.join(__dirname, 'uploads')));
+
 
 
 app.use(bodyparser.json())//to use a function inside the node app
@@ -49,10 +62,13 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 		var name = req.files;
 		var originalname = 	name[0].originalname;
 		var ext = originalname.split('.').pop()
-		var filenames = name[0].filename; //accessing first member of json array
-		filenames=filenames+'.'+ext;
+		// var filenames = name[0].filename; //accessing first member of json array
+		// filenames=filenames+'.'+ext;
+		var filenames = name[0].filename;
 		var detail = req.body.comment;
 		var roomno = req.body.roomno;
+		// var check = name[0].originalname;
+		// console.log("lol" + check);
 
 		db.get('complaint_detail_students').push({'roomno':roomno,
 		'detail': detail,
