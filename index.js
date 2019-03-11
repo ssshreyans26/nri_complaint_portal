@@ -18,7 +18,7 @@ var storage = multer.diskStorage({
 	}
   })
   
-  var upload = multer({ storage: storage });
+var upload = multer({ storage: storage });
 const adapter = new FileSync('database.json')
 const db = low(adapter)
 var cookieParser = require('cookie-parser');
@@ -64,7 +64,7 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 		var ext = originalname.split('.').pop()
 		// var filenames = name[0].filename; //accessing first member of json array
 		// filenames=filenames+'.'+ext;
-		var filenames = name[0].filename;
+		var filenames = name[0].filename;		
 		var detail = req.body.comment;
 		var roomno = req.body.roomno;
 		// var check = name[0].originalname;
