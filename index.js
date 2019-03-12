@@ -44,7 +44,7 @@ app.post('/login_check', (req, res) => {
  if 	(db.get('users').find({'roomno' : req.body.roomno}).value().password == req.body.password){
 	//  console.log("user logged in" + users.roomno)
 	 req.session.user = req.body.roomno;
-	 console.log(req.session.user);
+	 console.log("consoled 1st time" + req.session.user);
  	return res.redirect('/cp1');
  } 	 
 else
@@ -58,7 +58,7 @@ else
 
 
 app.post('/cp_data',upload.any(),(req,res)=>{
-	console.log(req.session.user);
+	console.log("inside cp_data" + req.session.user);
 		var name = req.files;
 		var originalname = 	name[0].originalname;
 		var ext = originalname.split('.').pop()
@@ -69,7 +69,7 @@ app.post('/cp_data',upload.any(),(req,res)=>{
 		var roomno = req.body.roomno;
 		// var check = name[0].originalname;
 		// console.log("lol" + check);
-
+		var rm = req.session.user
 		db.get('complaint_detail_students').push({'roomno':roomno,
 		'detail': detail,
 		'imgurl':filenames, }).write();
@@ -99,9 +99,12 @@ app.get('/cp', (req, res) => {
   res.sendFile(path.join(__dirname, '/cp.html'));
 });
 app.get('/cp2', (req, res) => {
+	var b = req.session.user;
 	var a = (db.get('complaint_detail_students').value());
+	var b = req.session.user;
+	console.log("inside cp2" + req.session.user)
 	// console.log('a', a);
-	res.render('cp2.pug',{a:a,title:'success'})
+	res.render('cp2.pug',{a:a,title:'success',b:b})
 	return a;
   });
 

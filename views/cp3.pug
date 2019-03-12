@@ -2,8 +2,7 @@
 head
     title=title
 body   
-    h1 Your Problem is Registered Successfully Registered
-    h2 #{b}
+    h1 Your Problem is Registered Successfully Registered 
     ul
         each item in a
             - var roomno="Room no"+item.roomno
@@ -14,4 +13,5 @@ body
             - var lol = {"src" : lol3}
             li=roomno+"\n"+details+"\n"+imageurl
             li
+                img.className#IdName(src="uploads/1552307597978.png" )
                 img&attributes(lol)
