@@ -116,6 +116,18 @@ app.get("/cp2", (req, res) => {
   res.render("cp2.pug", { a: a, title: "success", b: b,l:l});
   return l;
 });
+
+// ADMIN PORTAL
+app.get("/cp3", (req, res) => {
+  var b = req.session.user;
+  var a = db.get("complaint_detail_students").value();
+  // console.log("outside lopp"+ l);
+  // console.log("data of session user" +	c);
+  console.log("inside cp2" + req.session.user);
+  // console.log('a', a);
+  res.render("cp3.pug", { a: a, title: "success", b: b});
+  return a;
+});
 app.get("/cp1", (req, res) => {
   res.sendFile(path.join(__dirname, "/cp1.html"));
 });
