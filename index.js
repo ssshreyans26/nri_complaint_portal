@@ -93,26 +93,29 @@ app.post("/cp_data", upload.any(), (req, res) => {
 app.get("/cp", (req, res) => {
   res.sendFile(path.join(__dirname, "/cp.html"));
 });
+
+//USER COMPLAINT DISPLAY
 app.get("/cp2", (req, res) => {
   var b = req.session.user;
   var a = db.get("complaint_detail_students").value();
+  var l = []
   db.get("complaint_detail_students").value().forEach(element => {
 		
     if (element.roomno == b) {
       // var details = (db.get('complaint_details_students').find().value().detail);
       // console.log(details);
 
-      var l = element;
-      console.log(l);
+      l.push(element)
+      // console.log(l);
     }
   });
+  // console.log("outside lopp"+ l);
   // console.log("data of session user" +	c);
   console.log("inside cp2" + req.session.user);
   // console.log('a', a);
-  res.render("cp2.pug", { a: a, title: "success", b: b });
-  return a;
+  res.render("cp2.pug", { a: a, title: "success", b: b,l:l});
+  return l;
 });
-
 app.get("/cp1", (req, res) => {
   res.sendFile(path.join(__dirname, "/cp1.html"));
 });
