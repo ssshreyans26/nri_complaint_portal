@@ -57,6 +57,7 @@ app.post("/login_check", (req, res) => {
 
 app.post("/cp_data", upload.any(), (req, res) => {
   console.log("inside cp_data" + req.session.user);
+
   var name = req.files;
   var originalname = name[0].originalname;
   var ext = originalname.split(".").pop();
@@ -64,7 +65,7 @@ app.post("/cp_data", upload.any(), (req, res) => {
   // filenames=filenames+'.'+ext;
   var filenames = name[0].filename;
   var detail = req.body.comment;
-  var roomno = req.body.roomno;
+  var roomno = req.session.user;
   // var check = name[0].originalname;
   // console.log("lol" + check);
   var rm = req.session.user;

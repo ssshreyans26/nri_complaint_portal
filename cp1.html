@@ -10,14 +10,14 @@
   </head>
   <body>
     <form action="/cp_data" method="POST" enctype="multipart/form-data">
-      <span class="input-group-text" id="inputGroup-sizing-sm">ROOM NO.</span>
+      <!-- <span class="input-group-text" id="inputGroup-sizing-sm">ROOM NO.</span>
       <input
         type="text"
         name="roomno"
         class="form-control"
         aria-label="Small"
         aria-describedby="inputGroup-sizing-sm"
-      />
+      /> -->
       <span class="input-group-text" id="inputGroup-sizing-sm">Comment</span>
       <input
         type="text"
@@ -26,7 +26,11 @@
         aria-label="Small"
         aria-describedby="inputGroup-sizing-sm"
       />
-
+  
+          <label><input type="checkbox" value="electrical" id="mycheck">electrical</label>
+          <label><input type="checkbox" value="plumbing" id="mycheck">plumbing</label>
+          <label><input type="checkbox" value="carpentary" id="mycheck" >carpentary</label>
+          <label><input type="checkbox" value="others" id="mycheck">others</label>
       <input type="file" name="file" accept="image/*" />
       <input type="submit" name="submit" value="submit" />
     </form>
