@@ -71,11 +71,12 @@ app.post("/cp_data", upload.any(), (req, res) => {
   var filenames = name[0].filename;
   var detail = req.body.comment;
   var roomno = req.session.user;
+  var issues = issues_with;
   // var check = name[0].originalname;
   // console.log("lol" + check);
   var rm = req.session.user;
   db.get("complaint_detail_students")
-    .push({ roomno: roomno, detail: detail, imgurl: filenames })
+    .push({ roomno: roomno, detail: detail, imgurl: filenames,issues: issues })
     .write();
   return res.redirect("/cp2");
 
