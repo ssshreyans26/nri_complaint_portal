@@ -9,7 +9,7 @@
     />
   </head>
   <body>
-    <form action="/cp_data" method="POST" enctype="multipart/form-data">
+    <form id="cp_data" enctype="multipart/form-data" method="POST" action=/cp_data enctype="multipart/form-data">
       <!-- <span class="input-group-text" id="inputGroup-sizing-sm">ROOM NO.</span>
       <input
         type="text"
@@ -26,13 +26,67 @@
         aria-label="Small"
         aria-describedby="inputGroup-sizing-sm"
       />
-  
-          <label><input type="checkbox" value="electrical" id="mycheck">electrical</label>
-          <label><input type="checkbox" value="plumbing" id="mycheck">plumbing</label>
-          <label><input type="checkbox" value="carpentary" id="mycheck" >carpentary</label>
-          <label><input type="checkbox" value="others" id="mycheck">others</label>
+      <input id="hidden_var" name="issues_with" value="electrical" style="display: none;">
+      <label
+        ><input
+          type="radio"
+          name="issues"
+          value="electrical"
+          id="electrical"
+        />electrical</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="issues"
+          value="plumbing"
+          id="plumbing"
+        />plumbing</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="issues"
+          id="carpentary"
+          value="carpentary"
+        />carpentary</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="issues"
+          value="others"
+          id="others"
+        />others</label
+      >
       <input type="file" name="file" accept="image/*" />
-      <input type="submit" name="submit" value="submit" />
+      <input id="submit" type="submit" value="submit" />
     </form>
   </body>
+  <script
+    src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(document).ready(function() {
+      var id;
+      var setID = () => {
+        var myID = $("#cp_data")
+          .find(":radio:checked")
+          .val();
+        id = myID;
+        $('#hidden_var').val(id);
+        console.log(myID);
+      };
+
+      $("#others").prop("checked", true);
+      setID();
+      $('input[name="issues"]').change(() => {
+        setID();
+      });
+
+     
+    });
+  </script>
 </html>

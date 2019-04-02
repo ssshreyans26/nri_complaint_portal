@@ -58,9 +58,14 @@ app.post("/login_check", (req, res) => {
 app.post("/cp_data", upload.any(), (req, res) => {
   console.log("inside cp_data" + req.session.user);
 
+  var requestbody = req.body;
+  // console.log(Object.keys(req.body))
+  
   var name = req.files;
   var originalname = name[0].originalname;
   var ext = originalname.split(".").pop();
+  var issues_with = req.body['issues_with'];
+  console.log(issues_with);
   // var filenames = name[0].filename; //accessing first member of json array
   // filenames=filenames+'.'+ext;
   var filenames = name[0].filename;
@@ -95,11 +100,13 @@ app.get("/cp", (req, res) => {
   res.sendFile(path.join(__dirname, "/cp.html"));
 });
 
+
 //USER COMPLAINT DISPLAY
 app.get("/cp2", (req, res) => {
   var b = req.session.user;
   var a = db.get("complaint_detail_students").value();
   var l = []
+  
   db.get("complaint_detail_students").value().forEach(element => {
 		
     if (element.roomno == b) {
