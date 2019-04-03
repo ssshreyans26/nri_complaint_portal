@@ -45,7 +45,7 @@ app.post("/login_check", (req, res) => {
   ) {
     //  console.log("user logged in" + users.roomno)
     req.session.user = req.body.roomno;
-    console.log("consoled 1st time" + req.session.user);
+    // console.log("consoled 1st time" + req.session.user);
     return res.redirect("/cp1");
   } else {
     alert("invalid credentials");
@@ -56,7 +56,7 @@ app.post("/login_check", (req, res) => {
 });
 
 app.post("/cp_data", upload.any(), (req, res) => {
-  console.log("inside cp_data" + req.session.user);
+  // console.log("inside cp_data" + req.session.user);
 
   var requestbody = req.body;
   // console.log(Object.keys(req.body))
@@ -120,7 +120,7 @@ app.get("/cp2", (req, res) => {
   });
   // console.log("outside lopp"+ l);
   // console.log("data of session user" +	c);
-  console.log("inside cp2" + req.session.user);
+  // console.log("inside cp2" + req.session.user);
   // console.log('a', a);
   res.render("cp2.pug", { a: a, title: "success", b: b,l:l});
   return l;
@@ -132,7 +132,7 @@ app.get("/cp3", (req, res) => {
   var a = db.get("complaint_detail_students").value();
   // console.log("outside lopp"+ l);
   // console.log("data of session user" +	c);
-  console.log("inside cp2" + req.session.user);
+  // console.log("inside cp2" + req.session.user);
   // console.log('a', a);
   res.render("cp3.pug", { a: a, title: "success", b: b});
   return a;

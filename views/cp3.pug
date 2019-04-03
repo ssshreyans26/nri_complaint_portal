@@ -6,13 +6,15 @@ body
     h2 #{b}
     ul
         each item in a
-            - var roomno="Room no"+item.roomno
-            - var details="Details"+item.detail
-            - var imageurl="imageurl"+item.imgurl
+            - var roomno="Room no:"+"\n"+item.roomno
+            - var details="Details:"+"\n"+item.detail
+            - var imageurl="imageurl:"+"\n"+item.imgurl
+            - var issues="issues:"+"\n"+item.issues
             - var lol2 = item.imgurl
             - var lol3 = "uploads/"+item.imgurl
             - var lol = {"src" : lol3}
-            li=roomno+"\n"+details+"\n"+imageurl
-            li
-                img&attributes(lol)
-                
+            -if (item.issues=="electrical")
+                li=roomno+"\n"+details+"\n"+"\n"+issues
+                li
+                    img&attributes(lol)
+                    

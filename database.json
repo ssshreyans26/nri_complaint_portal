@@ -21,77 +21,21 @@
   "complaint_detail_students": [
     {
       "roomno": "1",
-      "detail": "hahahuh",
-      "imgurl": "1553282495974.png"
+      "detail": "The tap is not working",
+      "imgurl": "1554284740280.png",
+      "issues": "plumbing"
     },
     {
       "roomno": "1",
-      "detail": "ku",
-      "imgurl": "1553283109877.png"
+      "detail": "the bulb is not working",
+      "imgurl": "1554285310629.png",
+      "issues": "electrical"
     },
     {
-      "roomno": "1",
-      "detail": "ku",
-      "imgurl": "1553283157281.png"
-    },
-    {
-      "detail": "sdfgh",
-      "imgurl": "1553346552783.png"
-    },
-    {
-      "detail": "ca",
-      "imgurl": "1553347868113.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "hjj",
-      "imgurl": "1554213361474.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "hjv",
-      "imgurl": "1554213544004.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "hjv",
-      "imgurl": "1554213727551.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "hv",
-      "imgurl": "1554213799438.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "lala",
-      "imgurl": "1554214157434.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "fgn",
-      "imgurl": "1554214215254.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "dgfh",
-      "imgurl": "1554216163099.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "sdfghj",
-      "imgurl": "1554218255719.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "cgvb",
-      "imgurl": "1554218395827.png"
-    },
-    {
-      "roomno": "1",
-      "detail": "jasdeep gadha hai",
-      "imgurl": "1554225486534.png",
-      "issues": "carpentary"
+      "roomno": "2",
+      "detail": "The tap is not working properly",
+      "imgurl": "1554285772182.png",
+      "issues": "plumbing"
     }
   ]
 }
