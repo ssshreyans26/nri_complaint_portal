@@ -36,6 +36,13 @@
       "detail": "The tap is not working properly",
       "imgurl": "1554285772182.png",
       "issues": "plumbing"
+    },
+    {
+      "roomno": "1",
+      "detail": "there is a prblem",
+      "imgurl": "1554296135655.png",
+      "issues": "others",
+      "issue_status": "pending"
     }
   ]
 }

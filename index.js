@@ -76,7 +76,7 @@ app.post("/cp_data", upload.any(), (req, res) => {
   // console.log("lol" + check);
   var rm = req.session.user;
   db.get("complaint_detail_students")
-    .push({ roomno: roomno, detail: detail, imgurl: filenames,issues: issues })
+    .push({ roomno: roomno, detail: detail, imgurl: filenames,issues: issues,issue_status: "pending" })
     .write();
   return res.redirect("/cp2");
 
