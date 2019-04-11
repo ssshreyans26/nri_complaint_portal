@@ -126,6 +126,13 @@ app.get("/cp2", (req, res) => {
   return l;
 });
 
+//UPDATING COMPLAINT STATUS
+app.post("/status",(req,res) => {
+  h1 = req.body.d4
+  console.log(h1);
+
+})
+
 // ADMIN PORTAL
 app.get("/cp3", (req, res) => {
   var b = req.session.user;

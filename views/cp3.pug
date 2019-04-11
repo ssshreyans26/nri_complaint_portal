@@ -2,19 +2,28 @@
 head
     title=title
 body   
-    h1 Your Problem is Registered Successfully Registered
-    h2 #{b}
     ul
         each item in a
-            - var roomno="Room no:"+"\n"+item.roomno
-            - var details="Details:"+"\n"+item.detail
-            - var imageurl="imageurl:"+"\n"+item.imgurl
-            - var issues="issues:"+"\n"+item.issues
+            - var roomno=item.roomno
+            - var details=item.detail
+            - var imageurl=item.imgurl
+            - var issues=item.issues
             - var lol2 = item.imgurl
             - var lol3 = "uploads/"+item.imgurl
-            - var lol = {"src" : lol3}
-            -if (item.issues=="electrical")
-                li=roomno+"\n"+details+"\n"+"\n"+issues
+            - var lol = {"src" : lol3}            
+                li
+                form(action='/status', method='post')
+                    label Room Number
+                    p(type='text', name='d1')=roomno
+                    label Details
+                    p(type='text', name='d2')=details
+                    label Isuues
+                    p(type='text', name='d3')=issues
+                    label ImageUrl
+                    p(type='text', name='d4') tang
+                    input(typr='text' name='d5')
+                    input(type='submit', value='ComplaintSolved')
+                    
                 li
                     img&attributes(lol)
                     
