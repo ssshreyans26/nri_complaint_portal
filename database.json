@@ -7,48 +7,32 @@
     {
       "roomno": "2",
       "password": "1ds171"
-    },
-    {
-      "roomno": "1",
-      "password": "1ds17"
-    },
-    {
-      "roomno": "2",
-      "password": "1ds171"
     }
   ],
   "unum": 0,
   "complaint_detail_students": [
     {
+      "complaint_number": "rmo0t2v7y2jucj55bs",
       "roomno": "1",
-      "detail": "The tap is not working",
-      "imgurl": "1554284740280.png",
-      "issues": "plumbing"
-    },
-    {
-      "roomno": "1",
-      "detail": "the bulb is not working",
-      "imgurl": "1554285310629.png",
-      "issues": "electrical"
-    },
-    {
-      "roomno": "2",
-      "detail": "The tap is not working properly",
-      "imgurl": "1554285772182.png",
-      "issues": "plumbing"
-    },
-    {
-      "roomno": "1",
-      "detail": "there is a prblem",
-      "imgurl": "1554296135655.png",
+      "detail": "There is an issue with my roommate.",
+      "imgurl": "1554980334892.png",
       "issues": "others",
       "issue_status": "pending"
     },
     {
+      "complaint_number": "rmo0t2v84ojucjdqzx",
       "roomno": "1",
-      "detail": "My roommate stinks",
-      "imgurl": "1554905334872.png",
-      "issues": "others",
+      "detail": "The bed is broken.",
+      "imgurl": "1554980736222.png",
+      "issues": "carpentary",
+      "issue_status": "pending"
+    },
+    {
+      "complaint_number": "rmo0t2v8f6jucjn7av",
+      "roomno": "2",
+      "detail": "The tap is Leaking.",
+      "imgurl": "1554981177255.png",
+      "issues": "plumbing",
       "issue_status": "pending"
     }
   ]

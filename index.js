@@ -6,6 +6,7 @@ const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 var bodyparser = require("body-parser");
 var multer = require("multer");
+var uniqid = require('uniqid');
 
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -65,7 +66,7 @@ app.post("/cp_data", upload.any(), (req, res) => {
   var originalname = name[0].originalname;
   var ext = originalname.split(".").pop();
   var issues_with = req.body['issues_with'];
-  console.log(issues_with);
+  // console.log(issues_with);
   // var filenames = name[0].filename; //accessing first member of json array
   // filenames=filenames+'.'+ext;
   var filenames = name[0].filename;
@@ -75,8 +76,9 @@ app.post("/cp_data", upload.any(), (req, res) => {
   // var check = name[0].originalname;
   // console.log("lol" + check);
   var rm = req.session.user;
+  var id = uniqid();
   db.get("complaint_detail_students")
-    .push({ roomno: roomno, detail: detail, imgurl: filenames,issues: issues,issue_status: "pending" })
+    .push({ complaint_number: id,roomno: roomno, detail: detail, imgurl: filenames,issues: issues,issue_status: "pending" })
     .write();
   return res.redirect("/cp2");
 
@@ -128,10 +130,22 @@ app.get("/cp2", (req, res) => {
 
 //UPDATING COMPLAINT STATUS
 app.post("/status",(req,res) => {
-  h1 = req.body.d4
-  console.log(h1);
+  // console.log(req.body.complaint_number);
+  console.log(req.body.data);
+  str = req.body.data;
+  if (
+    db
+      .get("complaint_detail_students")
+      .find({ complaint_number:str })
+      .value().issue_status == "pending"
+  ){
+    db
+    .get("complaint_detail_students")
+    .find({ complaint_number:str })
+    .append().issue_status = "solved"
+  }
 
-})
+});
 
 // ADMIN PORTAL
 app.get("/cp3", (req, res) => {

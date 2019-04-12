@@ -1,6 +1,6 @@
 
 head
-    title=title
+    script(src="https://code.jquery.com/jquery-2.2.4.js", integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=", crossorigin="anonymous")
 body   
     ul
         each item in a
@@ -8,22 +8,26 @@ body
             - var details=item.detail
             - var imageurl=item.imgurl
             - var issues=item.issues
+            - var complaint_number=item.complaint_number 
+            - var complaint_status=item.issue_status 
             - var lol2 = item.imgurl
             - var lol3 = "uploads/"+item.imgurl
             - var lol = {"src" : lol3}            
                 li
-                form(action='/status', method='post')
+                form(action='', method='POST')
                     label Room Number
-                    p(type='text', name='d1')=roomno
+                    p(type='text')=roomno
                     label Details
-                    p(type='text', name='d2')=details
+                    p(type='text')=details
                     label Isuues
-                    p(type='text', name='d3')=issues
+                    p(type='text')=issues
                     label ImageUrl
-                    p(type='text', name='d4') tang
-                    input(typr='text' name='d5')
-                    input(type='submit', value='ComplaintSolved')
-                    
+                    p(type='text')=complaint_number
+                    label Complaint Status
+                    p(type='text')=complaint_status
+                    button(type='submit', value="complaint Solved", id=complaint_number,onclick="",name="state")  complaint_solved                  
                 li
                     img&attributes(lol)
-                    
+
+        script
+            include  cp3.js        
