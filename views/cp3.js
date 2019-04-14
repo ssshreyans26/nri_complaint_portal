@@ -4,7 +4,7 @@ console.log("cp3.js working fine");
 //     console.log("jqury loaded");
     $(document).ready(function(){
         $(document).on("click","button",function(){
-          console.log(this.id);
+          // console.log(this.id);
           var str = this.id;
           
           $.ajax({
@@ -23,6 +23,5 @@ console.log("cp3.js working fine");
             console.log(textStatus);
             console.log(errorThrown);
           })
-          ev.preventDefault();
         });
       });

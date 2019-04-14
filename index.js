@@ -115,8 +115,8 @@ app.get("/cp2", (req, res) => {
     if (element.roomno == b) {
       // var details = (db.get('complaint_details_students').find().value().detail);
       // console.log(details);
-
-      l.push(element)
+      db.get("complaint_detail_students").find()
+      
       // console.log(l);
     }
   });
@@ -133,18 +133,36 @@ app.post("/status",(req,res) => {
   // console.log(req.body.complaint_number);
   console.log(req.body.data);
   str = req.body.data;
+  var temp = [];
   if (
     db
       .get("complaint_detail_students")
       .find({ complaint_number:str })
       .value().issue_status == "pending"
   ){
-    db
-    .get("complaint_detail_students")
-    .find({ complaint_number:str })
-    .append().issue_status = "solved"
-  }
+    db.get("complaint_detail_students").value().forEach(element => {
+		
+      if (element.complaint_number == str) {
+        // var details = (db.get('complaint_details_students').find().value().detail);
+        // console.log(details);
+          console.log(element);
+          l = element;
+          db.get('complaint_details_students')
+            .remove({ element })
+            .write();
+          l.issue_status = 'solved'
+          console.log(l);
+          db.get("complaint_detail_students")
+          .push({ l })
+          .write();
 
+        console.log(element.issue_status);
+        // element.issue_status = "solved";
+        // console.log(l);
+      }
+    });
+  }
+  
 });
 
 // ADMIN PORTAL
