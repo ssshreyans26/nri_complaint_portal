@@ -12,63 +12,11 @@
   "unum": 0,
   "complaint_detail_students": [
     {
-      "complaint_number": "rmo0t2v7y2jucj55bs",
+      "complaint_number": "rmo0t2v4dijugy8mq6",
       "roomno": "1",
-      "detail": "There is an issue with my roommate.",
-      "imgurl": "1554980334892.png",
+      "detail": "sazdf",
+      "imgurl": "1555247556359.png",
       "issues": "others",
-      "issue_status": "solved"
-    },
-    {
-      "complaint_number": "rmo0t2v84ojucjdqzx",
-      "roomno": "1",
-      "detail": "The bed is broken.",
-      "imgurl": "1554980736222.png",
-      "issues": "carpentary",
-      "issue_status": "solved"
-    },
-    {
-      "complaint_number": "rmo0t2v8f6jucjn7av",
-      "roomno": "2",
-      "detail": "The tap is Leaking.",
-      "imgurl": "1554981177255.png",
-      "issues": "plumbing",
-      "issue_status": "pending"
-    },
-    {
-      "l": {
-        "complaint_number": "rmo0t2v7y2jucj55bs",
-        "roomno": "1",
-        "detail": "There is an issue with my roommate.",
-        "imgurl": "1554980334892.png",
-        "issues": "others",
-        "issue_status": "solved"
-      }
-    },
-    {
-      "l": {
-        "complaint_number": "rmo0t2v84ojucjdqzx",
-        "roomno": "1",
-        "detail": "The bed is broken.",
-        "imgurl": "1554980736222.png",
-        "issues": "carpentary",
-        "issue_status": "solved"
-      }
-    },
-    {
-      "complaint_number": "rmo0t2v3pcjugxrfua",
-      "roomno": "1",
-      "detail": "somthing is wrong",
-      "imgurl": "1555246754281.png",
-      "issues": "electrical",
-      "issue_status": "pending"
-    },
-    {
-      "complaint_number": "rmo0t2v3rmjugxspa5",
-      "roomno": "1",
-      "detail": "somethinf is",
-      "imgurl": "1555246813168.png",
-      "issues": "electrical",
       "issue_status": "pending"
     }
   ]

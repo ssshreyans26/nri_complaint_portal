@@ -146,14 +146,14 @@ app.post("/status",(req,res) => {
         // var details = (db.get('complaint_details_students').find().value().detail);
         // console.log(details);
           console.log(element);
-          l = element;
+          temp = element;
           db.get('complaint_details_students')
             .remove({ element })
             .write();
-          l.issue_status = 'solved'
-          console.log(l);
+          temp.issue_status = 'solved'
+          console.log(temp);
           db.get("complaint_detail_students")
-          .push({ l })
+          .push({ temp })
           .write();
 
         console.log(element.issue_status);
