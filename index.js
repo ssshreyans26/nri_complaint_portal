@@ -115,9 +115,8 @@ app.get("/cp2", (req, res) => {
     if (element.roomno == b) {
       // var details = (db.get('complaint_details_students').find().value().detail);
       // console.log(details);
-      db.get("complaint_detail_students").find()
-      
-      // console.log(l);
+      l.push(element)      
+      // console.log(l);Not this way, it's only gonna add one element like this.
     }
   });
   // console.log("outside lopp"+ l);
