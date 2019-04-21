@@ -17,7 +17,7 @@
       "detail": "sazdf",
       "imgurl": "1555247556359.png",
       "issues": "others",
-      "issue_status": "pending"
+      "issue_status": "solved"
     },
     {
       "complaint_number": "rmo0t2vmddjujdjixk",
@@ -65,6 +65,24 @@
       "imgurl": "1555409532613.png",
       "issues": "others",
       "issue_status": "pending"
+    },
+    {
+      "complaint_number": "rmo0t2v2yqjuquk1t5",
+      "roomno": "1",
+      "detail": "ddf",
+      "imgurl": "1555846032237.png",
+      "issues": "others",
+      "issue_status": "pending"
+    },
+    {
+      "temp": {
+        "complaint_number": "rmo0t2v4dijugy8mq6",
+        "roomno": "1",
+        "detail": "sazdf",
+        "imgurl": "1555247556359.png",
+        "issues": "others",
+        "issue_status": "solved"
+      }
     }
   ]
 }

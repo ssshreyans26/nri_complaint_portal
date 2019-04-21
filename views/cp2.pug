@@ -1,20 +1,26 @@
 head
-    title=title
+    link(rel='stylesheet', href='stylesheets/cp2.css')
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
 body   
     h1 Your Problem is Registered Successfully Registered
     h2 #{b}
-    ul
         each item in l
-            - var roomno="Room no"+"\n"+item.roomno
-            - var details="Details"+"\n"+item.detail
+            - var roomno="Room no:"+"\n"+item.roomno
+            - var details="Details:"+"\n"+item.detail
             - var imageurl="imageurl"+"\n"+item.imgurl
-            - var issues="issues"+"\n"+item.issues 
+            - var issues="issues:"+"\n"+item.issues
+            - var status="issues:"+"\n"+item.issue_status
             - var lol2 = item.imgurl
             - var lol3 = "uploads/"+item.imgurl
-            - var lol = {"src" : lol3}            
-                li=roomno+"\n"+details+"\n"+issues
-                li 
-                    img&attributes(lol)
+            - var lol = {"src" : lol3}
+                div(class="card-group")
+                div(class="card" style="width: 18rem;")
+                  img(src="..." class="card-img-top" alt="...")&attributes(lol)
+                  div(class="card-body")
+                    p(class="card-text")=roomno
+                    p(class="card-text")=details
+                    p(class="card-text")=status            
+
                     
 
                 
