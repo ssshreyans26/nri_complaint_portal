@@ -4,6 +4,7 @@ head
 body   
     h1 Your Problem is Registered Successfully Registered
     h2 #{b}
+    div(class="row")
         each item in l
             - var roomno="Room no:"+"\n"+item.roomno
             - var details="Details:"+"\n"+item.detail
@@ -19,7 +20,8 @@ body
                   div(class="card-body")
                     p(class="card-text")=roomno
                     p(class="card-text")=details
-                    p(class="card-text")=status            
+                    p(class="card-text")=status
+                    p(class="card-text")=issues             
 
                     
 
