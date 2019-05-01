@@ -158,12 +158,14 @@ app.post("/status",(req,res) => {
           var issues = temp.issues;
           var issue_status = temp.issue_status;
           db.get("complaint_detail_students")
-          .push({ complaint_number: complaint_number,
+          .assign({ complaint_number: complaint_number,
           roomno: roomno,
           detail: detail,
           imgurl: imgurl,
           issues: issues,
-          issue_status: issue_status }); 
+          issue_status: issue_status })
+          .write();
+          
 
         console.log(element.issue_status);
         // element.issue_status = "solved";

@@ -3,13 +3,14 @@ console.log("cp3.js working fine");
 // $(document).ready(function(e){
 //     console.log("jqury loaded");
     $(document).ready(function(){
-        $(document).on("click","button",function(){
+        $(document).on("click","button",function(e){
           // console.log(this.id);
-          var str = this.id;
           
+          e.preventDefault();
+          var str = this.id;
           $.ajax({
               type: "POST",
-              url: '/status' ,
+              url: 'http://localhost:8000/status' ,
               contentType: 'application/json',
               processData: false,
               data: JSON.stringify({data: str}),

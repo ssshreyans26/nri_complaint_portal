@@ -19,4 +19,4 @@ db.get('complaint_detail_students')
   .push({'roomno':'',
          'detail':'',
          'imgurl':'',  })
-  .write()
+         .write();

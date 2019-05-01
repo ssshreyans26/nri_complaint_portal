@@ -11,6 +11,13 @@
   ],
   "unum": 0,
   "complaint_detail_students": [
-    
+    {
+      "complaint_number": "rmo0t2v4vnjv50c7w2",
+      "roomno": "1",
+      "detail": "test",
+      "imgurl": "1556702271196.png",
+      "issues": "plumbing",
+      "issue_status": "solved"
+    }
   ]
 }
