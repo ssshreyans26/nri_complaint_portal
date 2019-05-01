@@ -12,92 +12,115 @@
   "unum": 0,
   "complaint_detail_students": [
     {
-      "complaint_number": "rmo0t2v4dijugy8mq6",
+      "complaint_number": "rmo0t2v3ozjuz7pw9i",
       "roomno": "1",
-      "detail": "sazdf",
-      "imgurl": "1555247556359.png",
+      "detail": "something is wrong.",
+      "imgurl": "1556351869578.png",
       "issues": "others",
       "issue_status": "solved"
     },
     {
-      "complaint_number": "rmo0t2vmddjujdjixk",
+      "complaint_number": "rmo0t2v5qyjuzfer92",
       "roomno": "1",
-      "detail": "he he",
-      "imgurl": "1555394191237.png",
+      "detail": "asdfcghj",
+      "imgurl": "1556364786794.png",
       "issues": "others",
-      "issue_status": "pending"
+      "issue_status": "solved"
     },
     {
-      "complaint_number": "rmo0t2vmp1juje345o",
-      "roomno": "1",
-      "detail": "lala",
-      "imgurl": "1555395105216.png",
+      "complaint_number": "rmo0t2v5tgjuzfj9g1",
+      "roomno": "2",
+      "detail": "blla",
+      "imgurl": "1556364996990.png",
       "issues": "carpentary",
-      "issue_status": "pending"
+      "issue_status": "solved"
     },
     {
-      "complaint_number": "rmo0t2v2uujujm5hui",
+      "complaint_number": "rmo0t2v5zfjuzfqwbe",
+      "roomno": "1",
+      "detail": "sdf",
+      "imgurl": "1556365353234.png",
+      "issues": "others",
+      "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v650juzfwx03",
+      "roomno": "1",
+      "detail": "fgn",
+      "imgurl": "1556365634058.png",
+      "issues": "carpentary",
+      "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v2gnjv4wtcjb",
       "roomno": "1",
       "detail": "There is an issue with my roommate.",
-      "imgurl": "1555408653167.png",
-      "issues": "others",
-      "issue_status": "pending"
+      "imgurl": "1556696351857.png",
+      "issues": "electrical",
+      "issue_status": "solved"
     },
     {
-      "complaint_number": "rmo0t2v2z1jujm9ukk",
+      "complaint_number": "rmo0t2v2ubjv4wyb4g",
+      "roomno": "1",
+      "detail": "the door is broken.",
+      "imgurl": "1556696583370.png",
+      "issues": "electrical",
+      "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v2w6jv4x0lhg",
+      "roomno": "1",
+      "detail": "The tap is Leaking.",
+      "imgurl": "1556696690107.png",
+      "issues": "electrical",
+      "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v2xqjv4x4c6r",
       "roomno": "1",
       "detail": "the bulb is not working",
-      "imgurl": "1555408856284.png",
-      "issues": "others",
-      "issue_status": "pending"
+      "imgurl": "1556696864683.png",
+      "issues": "electrical",
+      "issue_status": "solved"
     },
     {
-      "complaint_number": "rmo0t2v37wjujmk0eq",
-      "detail": "the bulb is not working",
-      "imgurl": "1555409330356.png",
-      "issues": "others",
-      "issue_status": "pending"
-    },
-    {
-      "complaint_number": "rmo0t2v3cjjujmoceq",
+      "complaint_number": "rmo0t2v389jv4xqnd2",
       "roomno": "1",
-      "detail": "jckuc",
-      "imgurl": "1555409532613.png",
-      "issues": "others",
-      "issue_status": "pending"
+      "detail": "issues test",
+      "imgurl": "1556697905600.png",
+      "issues": "electrical",
+      "issue_status": "solved"
     },
     {
-      "complaint_number": "rmo0t2v2yqjuquk1t5",
+      "complaint_number": "rmo0t2v3fsjv4xxmfj",
+      "roomno": "2",
+      "detail": "test 2",
+      "imgurl": "1556698230983.png",
+      "issues": "electrical",
+      "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v3fsjv4xxmfj",
+      "roomno": "2",
+      "detail": "test 2",
+      "imgurl": "1556698230983.png",
+      "issues": "electrical",
+      "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v3hbjv4xzi1i",
+      "roomno": "2",
+      "detail": "test 3",
+      "imgurl": "1556698318608.png",
+      "issues": "electrical",
+      "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v3lcjv4y495h",
       "roomno": "1",
-      "detail": "ddf",
-      "imgurl": "1555846032237.png",
-      "issues": "others",
-      "issue_status": "pending"
-    },
-    {
-      "temp": {
-        "complaint_number": "rmo0t2v4dijugy8mq6",
-        "roomno": "1",
-        "detail": "sazdf",
-        "imgurl": "1555247556359.png",
-        "issues": "others",
-        "issue_status": "solved"
-      }
-    },
-    {
-      "complaint_number": "rmo0t2v58tjur9mwcd",
-      "roomno": "1",
-      "detail": "garabar hai kuch daya.",
-      "imgurl": "1555871359523.png",
-      "issues": "carpentary",
-      "issue_status": "pending"
-    },
-    {
-      "complaint_number": "rmo0t2v5hvjur9u3ft",
-      "roomno": "1",
-      "detail": "nal se pani tapak raha hai.",
-      "imgurl": "1555871695324.png",
-      "issues": "plumbing",
+      "detail": "final test",
+      "imgurl": "1556698540341.png",
+      "issues": "electrical",
       "issue_status": "pending"
     }
   ]

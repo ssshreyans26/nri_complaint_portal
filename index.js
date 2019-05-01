@@ -150,10 +150,20 @@ app.post("/status",(req,res) => {
             .remove({ element })
             .write();
           temp.issue_status = 'solved'
-          console.log(temp);
+          console.log(temp.issues);
+          var complaint_number = temp.complaint_number;
+          var roomno = temp.roomno;
+          var detail = temp.detail;
+          var imgurl = temp.imgurl;
+          var issues = temp.issues;
+          var issue_status = temp.issue_status;
           db.get("complaint_detail_students")
-          .push({ temp })
-          .write();
+          .push({ complaint_number: complaint_number,
+          roomno: roomno,
+          detail: detail,
+          imgurl: imgurl,
+          issues: issues,
+          issue_status: issue_status }); 
 
         console.log(element.issue_status);
         // element.issue_status = "solved";
@@ -161,6 +171,7 @@ app.post("/status",(req,res) => {
       }
     });
   }
+  
   
 });
 

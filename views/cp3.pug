@@ -1,5 +1,6 @@
 
 head
+    link(rel='stylesheet', href='stylesheets/cp3.css')
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     script(src="https://code.jquery.com/jquery-2.2.4.js", integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=", crossorigin="anonymous")
 body   
@@ -14,20 +15,24 @@ body
             - var lol2 = item.imgurl
             - var lol3 = "uploads/"+item.imgurl
             - var lol = {"src" : lol3}
-                div(class="col-md-4 border border-dark")            
+                div(class="col-md-4 m-2 pl-4 border border-dark")            
                     form(action='', method='POST')
-                        label Room Number
-                        p(type='text')=roomno
-                        label Details
-                        p(type='text')=details
-                        label Isuues
-                        p(type='text')=issues
-                        label ImageUrl
-                        p(type='text')=complaint_number
-                        label Complaint Status
-                        p(type='text')=complaint_status
-                        button(type='submit', value="complaint Solved", id=complaint_number,onclick="",name="state")  complaint_solved              
-                        img(src="..." class="card-img-top" alt="...")&attributes(lol)
+                        div(class="row")
+                            div(class="col") 
+                                h2(class="text-dark")  Room Number
+                                h2(type='text')=roomno
+                                button(type='submit',class="btn btn-dark", value="complaint Solved", id=complaint_number,onclick="",name="state")  COMPLAINT-SOLVED
+                            div(class="col pt-1")
+                                label(class="text-light bg-dark") Details
+                                p(type='text')=details
+                                label(class="text-light bg-dark")  Isuues
+                                p(type='text')=issues
+                            div(class="col pt-1")
+                                label(class="text-light bg-dark")  Complaint-Number
+                                p(type='text')=complaint_number
+                                label(class="text-light bg-dark") Complaint Status
+                                p(type='text')=complaint_status              
+                            img(src="..." class="card-img-top" alt="...")&attributes(lol)
 
         script
             include  cp3.js        
