@@ -158,7 +158,7 @@ app.post("/status",(req,res) => {
           var issues = temp.issues;
           var issue_status = temp.issue_status;
           db.get("complaint_detail_students")
-          .assign({ complaint_number: complaint_number,
+          .assign ({ complaint_number: complaint_number,
           roomno: roomno,
           detail: detail,
           imgurl: imgurl,
@@ -185,6 +185,7 @@ app.get("/cp3", (req, res) => {
   // console.log("data of session user" +	c);
   // console.log("inside cp2" + req.session.user);
   // console.log('a', a);
+  
   res.render("cp3.pug", { a: a, title: "success", b: b});
   return a;
 });

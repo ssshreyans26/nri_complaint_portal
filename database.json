@@ -18,6 +18,22 @@
       "imgurl": "1556702271196.png",
       "issues": "plumbing",
       "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v87djv56rq99",
+      "roomno": "1",
+      "detail": "test2",
+      "imgurl": "1556713072550.png",
+      "issues": "carpentary",
+      "issue_status": "solved"
+    },
+    {
+      "complaint_number": "rmo0t2v89pjv56sirf",
+      "roomno": "1",
+      "detail": "test3",
+      "imgurl": "1556713109493.png",
+      "issues": "carpentary",
+      "issue_status": "solved"
     }
   ]
 }

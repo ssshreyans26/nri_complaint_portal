@@ -5,12 +5,14 @@ console.log("cp3.js working fine");
     $(document).ready(function(){
         $(document).on("click","button",function(e){
           // console.log(this.id);
-          
           e.preventDefault();
           var str = this.id;
+          console.log(typeof str);
+          var cid = str+'p'
+          $('#'+cid).html('solved');
           $.ajax({
               type: "POST",
-              url: 'http://localhost:8000/status' ,
+              url: '/status' ,
               contentType: 'application/json',
               processData: false,
               data: JSON.stringify({data: str}),
@@ -23,6 +25,6 @@ console.log("cp3.js working fine");
             console.log(jqXHR);
             console.log(textStatus);
             console.log(errorThrown);
-          })
+          });
         });
       });
